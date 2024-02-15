@@ -1,0 +1,79 @@
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.cxx
+/.idea/caches
+/.idea/libraries
+/.idea/dictionaries
+/.idea/modules
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/misc.xml
+/.idea/compiler.xml
+/.idea/gradle.xml
+/.idea/vcs.xml
+/.idea/jarRepositories.xml
+/.idea/deploymentTargetDropDown.xml
+/.idea/inspectionProfiles
+
+# Android Studio captures folder
+/captures
+
+# Local configuration file (sdk path, etc)
+/local.properties
+
+# Gradle files
+.gradle
+/build
+
+# Build application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Generated files
+bin/
+gen/
+out/
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+
+# Version control
+vcs.xml
+
+# lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+lint/reports/
+
+# Detekt Reports
+reports/
+
+# Mac
+.DS_Store
+*.swp
+*~.nib
+
+build/
+
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+*.mode2v3
+
+
+xcuserdata
