@@ -21,6 +21,9 @@ rootProject.name = "DailyPulse"
 
 include(
     ":androidApp",
+    ":core:base",
     ":core:database",
+    ":data:article",
+    ":domain:article",
     ":shared"
 )

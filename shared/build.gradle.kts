@@ -19,6 +19,8 @@ kotlin {
                 baseName = "shared"
 
                 export(projects.core.database)
+
+                export(projects.domain.article)
             }
         }
 
