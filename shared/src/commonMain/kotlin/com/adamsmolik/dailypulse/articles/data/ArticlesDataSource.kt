@@ -1,6 +1,6 @@
 package com.adamsmolik.dailypulse.articles.data
 
-import com.adamsmolik.dailypulse.db.DailyPulseDatabase
+import com.adamsmolik.dailypulse.core.db.DailyPulseDatabase
 
 class ArticlesDataSource(private val database: DailyPulseDatabase) {
 

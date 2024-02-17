@@ -8,11 +8,12 @@ androidx-navigationCompose = "2.7.7"
 androidx-composeBom = "2024.02.00"
 androidx-composeMaterial3 = "1.2.0"
 
-#compose = "1.6.1"
 compose-compiler = "1.5.9"
 
 kotlinx-coroutines-core = "1.7.3"
 kotlinx-datetime = "0.5.0"
+
+shared-module-version = "0.9.1"
 
 koin = "3.5.3"
 ktorClient = "2.3.5"
@@ -59,6 +60,10 @@ sql-android-driver = { module = "app.cash.sqldelight:android-driver", version.re
 
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+# Build logic dependencies
+android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]
 shared-ktor = ["ktor-client-core", "ktor-serialization-kotlinx-json", "ktor-client-content-negotiation"]

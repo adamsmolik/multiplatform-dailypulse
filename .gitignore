@@ -3,21 +3,11 @@
 *.ipr
 *.iws
 .cxx
-/.idea/caches
-/.idea/libraries
-/.idea/dictionaries
-/.idea/modules
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-/.idea/misc.xml
-/.idea/compiler.xml
-/.idea/gradle.xml
-/.idea/vcs.xml
-/.idea/jarRepositories.xml
-/.idea/deploymentTargetDropDown.xml
-/.idea/inspectionProfiles
+.gradle
+/build
+/.idea/*
+!/.idea/codeStyles
+!/.idea/dictionaries
 
 # Android Studio captures folder
 /captures
@@ -26,8 +16,8 @@
 /local.properties
 
 # Gradle files
-.gradle
-/build
+.gradle/
+build/
 
 # Build application files
 *.apk
@@ -41,10 +31,6 @@
 bin/
 gen/
 out/
-
-# External native build folder generated in Android Studio 2.2 and later
-.externalNativeBuild
-
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
@@ -64,16 +50,31 @@ reports/
 
 # Mac
 .DS_Store
-*.swp
-*~.nib
 
-build/
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
 
+## Shared
+/shared/domain/settings/implementation/*.preferences_pb
+
+*.xcworkspacedata
+*.xcuserstate
+*.xcscheme
+xcschememanagement.plist
+*.xcbkptlist
+
+## User settings
+xcuserdata/
+
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
+DerivedData/
+*.moved-aside
 *.pbxuser
-*.perspective
-*.perspectivev3
+!default.pbxuser
 *.mode1v3
+!default.mode1v3
 *.mode2v3
-
-
-xcuserdata
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3

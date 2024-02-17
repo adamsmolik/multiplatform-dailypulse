@@ -1,4 +1,8 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
+    includeBuild("tooling")
+
     repositories {
         google()
         gradlePluginPortal()
@@ -13,12 +17,10 @@ dependencyResolutionManagement {
     }
 }
 
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 rootProject.name = "DailyPulse"
 
 include(
     ":androidApp",
+    ":core:database",
     ":shared"
 )
-
