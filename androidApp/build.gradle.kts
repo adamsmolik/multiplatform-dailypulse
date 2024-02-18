@@ -1,40 +1,25 @@
+import com.adamsmolik.dailypulse.extensions.DailyPulseBuildType
+
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    id("dailypulse.application")
 }
 
 android {
-    namespace = "com.adamsmolik.dailypulse.android"
-    compileSdk = 34
+    namespace = "com.adamsmolik.dailypulse"
+
     defaultConfig {
-        applicationId = "com.adamsmolik.dailypulse.android"
-        minSdk = 24
-        targetSdk = 34
+        applicationId = "com.adamsmolik.dailypulse"
         versionCode = 1
         versionName = "1.0"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
-    }
+
+    buildTypes { debug { applicationIdSuffix = DailyPulseBuildType.DEBUG.applicationIdSuffix } }
+
     packaging {
         resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+            excludes.add("/META-INF/versions/9/previous-compilation-data.bin")
         }
-    }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = "17"
     }
 }
 

@@ -24,8 +24,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.unit.sp
-import com.adamsmolik.dailypulse.sources.application.Source
-import com.adamsmolik.dailypulse.sources.presentation.SourcesViewModel
+import com.adamsmolik.dailypulse.presentation.source.model.SourceUiModel
+import com.adamsmolik.dailypulse.presentation.source.viewmodel.SourcesViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -73,7 +73,7 @@ fun SourcesListView(viewModel: SourcesViewModel) {
 }
 
 @Composable
-fun SourceItemView(source: Source) {
+fun SourceItemView(source: SourceUiModel) {
 
     Column(
         modifier = Modifier

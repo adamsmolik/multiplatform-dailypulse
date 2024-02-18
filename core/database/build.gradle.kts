@@ -10,12 +10,14 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(libs.sql.coroutines.extensions)
+                implementation(libs.koin.core)
             }
         }
 
         androidMain {
             dependencies {
                 implementation(libs.sql.android.driver)
+                implementation(libs.koin.android)
             }
         }
 
@@ -33,7 +35,7 @@ kotlin {
     }
 }
 
-android { namespace = "com.adamsmolik.dailypulse.db" }
+android { namespace = "com.adamsmolik.dailypulse.core.db" }
 
 sqldelight {
     databases {

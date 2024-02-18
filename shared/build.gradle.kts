@@ -6,8 +6,7 @@ plugins {
     id("plugin.dailypulse.multiplatform")
 
     alias(libs.plugins.sqlDelight)
-    id("co.touchlab.skie") version "0.6.1"
-    kotlin("plugin.serialization") version "1.9.20"
+    alias(libs.plugins.skie)
 }
 
 version = libs.versions.shared.module.version.get()
@@ -18,36 +17,31 @@ kotlin {
             binaries.withType<Framework> {
                 baseName = "shared"
 
-                export(projects.core.database)
-
-                export(projects.domain.article)
+                export(projects.presentation.article)
+                export(projects.presentation.source)
             }
         }
 
         commonMain.dependencies {
+            api(projects.core.base)
             api(projects.core.database)
+            api(projects.core.network)
+            api(projects.core.ui)
 
-            implementation(libs.kotlinx.coroutines.core)
-            implementation(libs.kotlinx.datetime)
-            implementation(libs.bundles.shared.ktor)
+            api(projects.data.article)
+            api(projects.data.source)
+
+            api(projects.domain.article)
+            api(projects.domain.source)
+
+            api(projects.presentation.article)
+            api(projects.presentation.source)
+
             implementation(libs.koin.core)
-        }
-
-        androidMain.dependencies {
-            implementation(libs.androidx.lifecycle.viewmodel.ktx)
-            implementation(libs.ktor.client.android)
-        }
-
-        iosMain.dependencies {
-            implementation(libs.ktor.client.darwin)
-        }
-
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
         }
     }
 }
 
 android {
-    namespace = "com.adamsmolik.dailypulse"
+    namespace = "com.adamsmolik.dailypulse.shared"
 }

@@ -21,7 +21,7 @@ extension SourcesScreen {
         
         let viewModel: SourcesViewModel
         
-        @Published var sourcesState: SourcesState
+        @Published var sourcesState: SourcesUiModel
         
         func startObserving() {
             Task {

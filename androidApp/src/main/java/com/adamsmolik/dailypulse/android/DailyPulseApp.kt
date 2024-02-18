@@ -1,8 +1,8 @@
 package com.adamsmolik.dailypulse.android
 
 import android.app.Application
-import com.adamsmolik.dailypulse.android.di.databaseModule
 import com.adamsmolik.dailypulse.android.di.viewModelsModule
+import com.adamsmolik.dailypulse.core.db.di.databaseModule
 import com.adamsmolik.dailypulse.di.sharedKoinModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin

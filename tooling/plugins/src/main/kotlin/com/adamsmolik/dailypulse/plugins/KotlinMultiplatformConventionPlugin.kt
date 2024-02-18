@@ -24,6 +24,8 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
                 androidTarget()
             }
 
+            jvm()
+
             listOf(
                 iosX64(),
                 iosArm64(),

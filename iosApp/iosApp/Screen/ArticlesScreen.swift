@@ -21,7 +21,7 @@ extension ArticlesScreen {
             articlesState = articlesViewModel.articlesState.value
         }
         
-        @Published var articlesState: ArticlesState
+        @Published var articlesState: ArticlesUiModel
         
         func startObserving() {
             Task {
@@ -74,7 +74,7 @@ struct AppBar: View {
 }
 
 struct ArticleItemView: View {
-    var article: Article
+    var article: ArticleUiModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

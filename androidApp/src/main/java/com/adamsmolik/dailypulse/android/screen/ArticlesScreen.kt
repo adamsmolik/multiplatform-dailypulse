@@ -28,9 +28,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.adamsmolik.dailypulse.articles.application.Article
-import com.adamsmolik.dailypulse.articles.presentation.ArticlesState
-import com.adamsmolik.dailypulse.articles.presentation.ArticlesViewModel
+import com.adamsmolik.dailypulse.presentation.article.model.ArticleUiModel
+import com.adamsmolik.dailypulse.presentation.article.model.ArticlesUiModel
+import com.adamsmolik.dailypulse.presentation.article.viewmodel.ArticlesViewModel
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshState
 import org.koin.androidx.compose.koinViewModel
@@ -83,7 +83,7 @@ private fun AppBar(
 
 @Composable
 fun ArticlesListView(
-    state: ArticlesState,
+    state: ArticlesUiModel,
     onRefresh: () -> Unit,
 ) {
 
@@ -100,7 +100,7 @@ fun ArticlesListView(
 }
 
 @Composable
-fun ArticleItemView(article: Article) {
+fun ArticleItemView(article: ArticleUiModel) {
     Column(
         modifier = Modifier
             .fillMaxWidth()

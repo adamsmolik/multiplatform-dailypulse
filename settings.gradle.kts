@@ -23,7 +23,13 @@ include(
     ":androidApp",
     ":core:base",
     ":core:database",
+    ":core:network",
+    ":core:ui",
     ":data:article",
+    ":data:source",
     ":domain:article",
+    ":domain:source",
+    ":presentation:article",
+    ":presentation:source",
     ":shared"
 )
