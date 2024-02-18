@@ -36,9 +36,13 @@ class ArticlesViewModel(
                 forceRefresh = forceFetch,
             )
 
-            val fetchedArticles = useCase.execute(input)
-
-            _articlesState.emit(ArticlesUiModel(articles = fetchedArticles.map { it.toUiModel() }))
+            useCase.execute(input)
+                .onData {
+                    _articlesState.emit(ArticlesUiModel(articles = it.map { item -> item.toUiModel() }))
+                }
+                .onError {
+                    _articlesState.emit(ArticlesUiModel(error = it.toString()))
+                }
         }
     }
 }

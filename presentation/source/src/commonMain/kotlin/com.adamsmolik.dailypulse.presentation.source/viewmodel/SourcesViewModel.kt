@@ -31,11 +31,13 @@ class SourcesViewModel(
                 )
             )
 
-            val sources = useCase.execute()
-
-            _sourcesState.emit(
-                SourcesUiModel(sources = sources.map { it.toUiModel() })
-            )
+            useCase.execute()
+                .onData {
+                    _sourcesState.emit(SourcesUiModel(sources = it.map { item -> item.toUiModel() }))
+                }
+                .onError {
+                    _sourcesState.emit(SourcesUiModel(error = it.toString()))
+                }
         }
     }
 }

@@ -1,14 +1,19 @@
 plugins {
     id("plugin.dailypulse.kotlin.android")
     id("plugin.dailypulse.multiplatform")
+
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
     sourceSets {
         commonMain {
             dependencies {
+                implementation(projects.core.base)
+
                 implementation(libs.bundles.shared.ktor)
                 implementation(libs.koin.core)
+                implementation(libs.ktor.client.serialization)
             }
         }
 
