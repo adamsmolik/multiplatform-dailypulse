@@ -1,7 +1,7 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
-    includeBuild("tooling")
+    includeBuild("build-logic")
 
     repositories {
         google()

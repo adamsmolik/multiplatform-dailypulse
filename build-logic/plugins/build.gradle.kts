@@ -20,25 +20,25 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("kotlinMultiplatformPlugin") {
-            id = "plugin.dailypulse.multiplatform"
+        register("kotlinMultiplatform") {
+            id = "dailypulse.kotlin.multiplatform"
             implementationClass = "com.adamsmolik.dailypulse.plugins.KotlinMultiplatformConventionPlugin"
         }
         register("androidApplication") {
-            id = "dailypulse.application"
-            implementationClass = "com.adamsmolik.dailypulse.plugins.ApplicationPlugin"
+            id = "dailypulse.android.application"
+            implementationClass = "com.adamsmolik.dailypulse.plugins.AndroidApplicationPlugin"
         }
         register("androidLibrary") {
-            id = "plugin.dailypulse.android.library"
+            id = "dailypulse.android.library"
             implementationClass = "com.adamsmolik.dailypulse.plugins.AndroidLibraryPlugin"
         }
-        register("kotlinAndroid") {
-            id = "plugin.dailypulse.kotlin.android"
-            implementationClass = "com.adamsmolik.dailypulse.plugins.KotlinAndroidPlugin"
+        register("androidKotlin") {
+            id = "dailypulse.android.kotlin"
+            implementationClass = "com.adamsmolik.dailypulse.plugins.AndroidKotlinPlugin"
         }
-        register("androidComposeLibrary") {
-            id = "plugin.dailypulse.compose.library"
-            implementationClass = "com.adamsmolik.dailypulse.plugins.ComposeLibraryPlugin"
+        register("androidLibraryCompose") {
+            id = "dailypulse.android.library.compose"
+            implementationClass = "com.adamsmolik.dailypulse.plugins.AndroidLibraryComposePlugin"
         }
     }
 }

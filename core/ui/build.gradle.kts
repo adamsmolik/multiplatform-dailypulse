@@ -1,6 +1,6 @@
 plugins {
-    id("plugin.dailypulse.kotlin.android")
-    id("plugin.dailypulse.multiplatform")
+    alias(libs.plugins.dailypulse.android.kotlin)
+    alias(libs.plugins.dailypulse.kotlin.multiplatform)
 }
 
 kotlin {

@@ -1,7 +1,7 @@
 import com.adamsmolik.dailypulse.extensions.DailyPulseBuildType
 
 plugins {
-    id("dailypulse.application")
+    alias(libs.plugins.dailypulse.android.application)
 }
 
 android {

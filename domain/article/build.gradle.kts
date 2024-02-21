@@ -1,5 +1,5 @@
 plugins {
-    id("plugin.dailypulse.multiplatform")
+    alias(libs.plugins.dailypulse.kotlin.multiplatform)
 }
 
 kotlin {

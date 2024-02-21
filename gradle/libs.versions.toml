@@ -85,3 +85,10 @@ kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", versio
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
 skie = { id = "co.touchlab.skie", version.ref = "skie" }
+
+# Plugins defined by this project
+dailypulse-kotlin-multiplatform = { id = "dailypulse.kotlin.multiplatform", version = "unspecified" }
+dailypulse-android-application = { id = "dailypulse.android.application", version = "unspecified" }
+dailypulse-android-kotlin = { id = "dailypulse.android.kotlin", version = "unspecified" }
+dailypulse-android-library = { id = "dailypulse.android.library", version = "unspecified" }
+dailypulse-android-library-compose = { id = "dailypulse.android.library.compose", version = "unspecified" }

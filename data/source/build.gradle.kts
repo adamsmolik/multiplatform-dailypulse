@@ -1,6 +1,5 @@
 plugins {
-    id("plugin.dailypulse.multiplatform")
-
+    alias(libs.plugins.dailypulse.kotlin.multiplatform)
     alias(libs.plugins.kotlinSerialization)
 }
 
