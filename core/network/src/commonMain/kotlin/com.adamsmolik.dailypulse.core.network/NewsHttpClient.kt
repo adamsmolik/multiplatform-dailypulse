@@ -12,7 +12,6 @@ import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
-import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpHeaders
 import io.ktor.http.URLProtocol
 import io.ktor.http.isSuccess
@@ -41,6 +40,7 @@ fun newsHttpClient(
     HttpResponseValidator {
         validateResponse { response ->
             if (!response.status.isSuccess()) {
+                // TODO parsing error
                 val error: ErrorDTO = response.body()
 
 //                val failureReason = when (response.status) {
@@ -57,7 +57,7 @@ fun newsHttpClient(
                 throw HttpException(
                     error = error,
                     response = response,
-                    cachedResponseText = response.bodyAsText(),
+                    cachedResponseText = error.toString(),
                 )
             }
         }
@@ -70,7 +70,7 @@ fun newsHttpClient(
     }
 
     install(Logging) {
-        // TODO
+        // TODO implement logging lib
         logger = object : Logger {
             override fun log(message: String) {
                 println(message)
