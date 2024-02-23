@@ -9,6 +9,7 @@ data class ArticleUiModel(
     val imageUrl: String,
 )
 
+// TODO @Immutable :-(
 data class ArticlesUiModel(
     val articles: List<ArticleUiModel> = emptyList(),
     val loading: Boolean = false,

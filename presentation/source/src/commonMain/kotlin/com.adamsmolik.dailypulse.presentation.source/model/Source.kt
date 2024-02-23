@@ -9,6 +9,7 @@ data class SourceUiModel(
     val origin: String,
 )
 
+// TODO @Immutable :-(
 data class SourcesUiModel(
     val sources: List<SourceUiModel> = emptyList(),
     val loading: Boolean = false,
