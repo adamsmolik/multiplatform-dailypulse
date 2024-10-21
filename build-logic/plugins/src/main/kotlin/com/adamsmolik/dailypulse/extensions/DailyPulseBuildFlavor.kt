@@ -20,7 +20,7 @@ enum class DailyPulseFlavor(
 }
 
 fun Project.configureFlavors(
-    commonExtension: CommonExtension<*, *, *, *, *>,
+    commonExtension: CommonExtension<*, *, *, *, *, *>,
     flavorConfigurationBlock: ProductFlavor.(flavor: DailyPulseFlavor) -> Unit = {}
 ) {
     commonExtension.apply {
