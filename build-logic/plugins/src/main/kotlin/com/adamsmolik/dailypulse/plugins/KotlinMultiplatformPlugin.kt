@@ -1,5 +1,6 @@
 package com.adamsmolik.dailypulse.plugins
 
+import com.adamsmolik.dailypulse.extensions.configureDetekt
 import com.adamsmolik.dailypulse.extensions.configureKotlin
 import com.adamsmolik.dailypulse.extensions.configureKtlint
 import com.adamsmolik.dailypulse.extensions.libs
@@ -15,11 +16,13 @@ class KotlinMultiplatformPlugin : Plugin<Project> {
         with(pluginManager) {
             apply("org.jetbrains.kotlin.multiplatform")
             apply("org.jlleitschuh.gradle.ktlint")
+            apply("io.gitlab.arturbosch.detekt")
         }
 
         version = libs.findVersion("shared-module-version")
 
         configureKtlint()
+        configureDetekt()
 
         extensions.configure<KotlinMultiplatformExtension> {
             applyDefaultHierarchyTemplate()

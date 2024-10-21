@@ -1,3 +1,5 @@
+// ktlint-disable filename
+
 package com.adamsmolik.dailypulse.domain.source.model
 
 data class SourceModel(

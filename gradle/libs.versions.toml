@@ -21,6 +21,7 @@ sqlDelight = "2.0.1"
 skie = "0.9.3"
 coil-compose = "2.5.0"
 ktlint = "11.1.0"
+detekt = "1.23.7"
 
 # REMOVE
 accompanistSwiperefresh = "0.34.0"
@@ -69,6 +70,7 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotl
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 ktlint-gradlePlugin = { module = "org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin", version.ref = "ktlint" }
+detekt-gradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 
 [bundles]
 shared-ktor = [
@@ -88,6 +90,7 @@ kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = 
 sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
 skie = { id = "co.touchlab.skie", version.ref = "skie" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint"}
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt"}
 
 # Plugins defined by this project
 dailypulse-kotlin-multiplatform = { id = "dailypulse.kotlin.multiplatform", version = "unspecified" }

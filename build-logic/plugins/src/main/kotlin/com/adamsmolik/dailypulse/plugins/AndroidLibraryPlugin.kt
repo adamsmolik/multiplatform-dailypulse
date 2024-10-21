@@ -3,6 +3,7 @@ package com.adamsmolik.dailypulse.plugins
 import com.android.build.gradle.LibraryExtension
 import com.adamsmolik.dailypulse.extensions.Versions
 import com.adamsmolik.dailypulse.extensions.configureAndroid
+import com.adamsmolik.dailypulse.extensions.configureDetekt
 import com.adamsmolik.dailypulse.extensions.configureFlavors
 import com.adamsmolik.dailypulse.extensions.configureKtlint
 import org.gradle.api.JavaVersion
@@ -15,9 +16,11 @@ class AndroidLibraryPlugin : Plugin<Project> {
         with(pluginManager) {
             apply("com.android.library")
             apply("org.jlleitschuh.gradle.ktlint")
+            apply("io.gitlab.arturbosch.detekt")
         }
 
         configureKtlint()
+        configureDetekt()
 
         extensions.configure<LibraryExtension> {
             compileOptions {

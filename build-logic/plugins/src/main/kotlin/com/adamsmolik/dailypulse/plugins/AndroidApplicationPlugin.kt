@@ -6,6 +6,7 @@ import com.adamsmolik.dailypulse.extensions.DailyPulseFlavor
 import com.adamsmolik.dailypulse.extensions.Versions
 import com.adamsmolik.dailypulse.extensions.configureAndroid
 import com.adamsmolik.dailypulse.extensions.configureAndroidCompose
+import com.adamsmolik.dailypulse.extensions.configureDetekt
 import com.adamsmolik.dailypulse.extensions.configureFlavors
 import com.adamsmolik.dailypulse.extensions.configureKtlint
 import org.gradle.api.Plugin
@@ -19,9 +20,11 @@ class AndroidApplicationPlugin : Plugin<Project> {
             apply("com.android.application")
             apply("org.jetbrains.kotlin.android")
             apply("org.jlleitschuh.gradle.ktlint")
+            apply("io.gitlab.arturbosch.detekt")
         }
 
         configureKtlint()
+        configureDetekt()
 
         extensions.configure<ApplicationExtension> {
             defaultConfig {
