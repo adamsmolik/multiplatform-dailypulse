@@ -1,6 +1,7 @@
 package com.adamsmolik.dailypulse.plugins
 
 import com.adamsmolik.dailypulse.extensions.configureKotlin
+import com.adamsmolik.dailypulse.extensions.configureKtlint
 import com.adamsmolik.dailypulse.extensions.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -9,13 +10,16 @@ import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
-class KotlinMultiplatformConventionPlugin : Plugin<Project> {
+class KotlinMultiplatformPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
             apply("org.jetbrains.kotlin.multiplatform")
+            apply("org.jlleitschuh.gradle.ktlint")
         }
 
         version = libs.findVersion("shared-module-version")
+
+        configureKtlint()
 
         extensions.configure<KotlinMultiplatformExtension> {
             applyDefaultHierarchyTemplate()

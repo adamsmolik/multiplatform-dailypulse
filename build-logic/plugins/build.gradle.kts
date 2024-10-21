@@ -16,13 +16,14 @@ java {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.ktlint.gradlePlugin)
 }
 
 gradlePlugin {
     plugins {
         register("kotlinMultiplatform") {
             id = "dailypulse.kotlin.multiplatform"
-            implementationClass = "com.adamsmolik.dailypulse.plugins.KotlinMultiplatformConventionPlugin"
+            implementationClass = "com.adamsmolik.dailypulse.plugins.KotlinMultiplatformPlugin"
         }
         register("androidApplication") {
             id = "dailypulse.android.application"

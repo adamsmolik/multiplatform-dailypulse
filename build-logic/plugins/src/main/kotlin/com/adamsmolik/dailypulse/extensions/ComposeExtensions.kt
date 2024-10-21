@@ -11,7 +11,6 @@ internal fun Project.configureAndroidCompose(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
     commonExtension.apply {
-
         defaultConfig {
             minSdk = Versions.MIN_SDK
         }
@@ -37,8 +36,6 @@ internal fun Project.configureAndroidCompose(
             val bom = libs.findLibrary("androidx-compose-bom").get()
 
             add("implementation", platform(bom))
-            // TODO enable lint compose
-//            add("lintChecks", libs.findLibrary("lint-compose").get())
         }
     }
 }

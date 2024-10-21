@@ -7,36 +7,38 @@ import com.adamsmolik.dailypulse.extensions.Versions
 import com.adamsmolik.dailypulse.extensions.configureAndroid
 import com.adamsmolik.dailypulse.extensions.configureAndroidCompose
 import com.adamsmolik.dailypulse.extensions.configureFlavors
+import com.adamsmolik.dailypulse.extensions.configureKtlint
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
 class AndroidApplicationPlugin : Plugin<Project> {
 
-    override fun apply(target: Project) {
-        with(target) {
-            with(pluginManager) {
-                apply("com.android.application")
-                apply("org.jetbrains.kotlin.android")
+    override fun apply(target: Project) = with(target) {
+        with(pluginManager) {
+            apply("com.android.application")
+            apply("org.jetbrains.kotlin.android")
+            apply("org.jlleitschuh.gradle.ktlint")
+        }
+
+        configureKtlint()
+
+        extensions.configure<ApplicationExtension> {
+            defaultConfig {
+                targetSdk = Versions.TARGET_SDK
+                missingDimensionStrategy(
+                    FlavorDimension.contentType.name,
+                    DailyPulseFlavor.demo.name
+                )
             }
 
-            extensions.configure<ApplicationExtension> {
-                defaultConfig {
-                    targetSdk = Versions.TARGET_SDK
-                    missingDimensionStrategy(
-                        FlavorDimension.contentType.name,
-                        DailyPulseFlavor.demo.name
-                    )
-                }
-
-                buildFeatures {
-                    buildConfig = true
-                }
-
-                configureAndroid()
-                configureAndroidCompose(this)
-                configureFlavors(this)
+            buildFeatures {
+                buildConfig = true
             }
+
+            configureAndroid()
+            configureAndroidCompose(this)
+            configureFlavors(this)
         }
     }
 }
