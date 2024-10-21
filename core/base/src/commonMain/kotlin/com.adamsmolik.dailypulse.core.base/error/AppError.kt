@@ -11,7 +11,8 @@ sealed class AppError {
             val responseError: ResponseErrorModel,
         ) : NetworkError()
 
-        data class InvalidResponse(override val cause: Throwable, val errorBody: String?) : NetworkError()
+        data class InvalidResponse(override val cause: Throwable, val errorBody: String?) :
+            NetworkError()
 //        data class NoConnectivityError(override val cause: Throwable) : NetworkError()
 
         // TODO

@@ -1,9 +1,9 @@
 package com.adamsmolik.dailypulse.domain.source.usecase
 
+import com.adamsmolik.dailypulse.core.base.arch.Result
 import com.adamsmolik.dailypulse.core.base.arch.UseCaseInputLess
 import com.adamsmolik.dailypulse.domain.source.model.SourceModel
 import com.adamsmolik.dailypulse.domain.source.repository.SourceRepository
-import com.adamsmolik.dailypulse.core.base.arch.Result
 
 class ListSourcesUseCase(
     private val sourceRepository: SourceRepository,

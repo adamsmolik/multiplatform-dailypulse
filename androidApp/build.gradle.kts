@@ -38,7 +38,7 @@ dependencies {
 
     implementation(libs.coil.compose)
 
-    implementation (libs.accompanist.swiperefresh)
+    implementation(libs.accompanist.swiperefresh)
 
     debugImplementation(libs.androidx.compose.ui.tooling)
 }

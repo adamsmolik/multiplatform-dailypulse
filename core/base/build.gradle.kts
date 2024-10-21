@@ -4,8 +4,6 @@ plugins {
 
 kotlin {
     sourceSets {
-        commonMain {
-
-        }
+        commonMain {}
     }
 }

@@ -1,11 +1,11 @@
 package com.adamsmolik.dailypulse.data.source.api
 
-import com.adamsmolik.dailypulse.core.network.di.NewsHttpClient
-import io.ktor.http.HttpMethod
-import io.ktor.http.path
 import com.adamsmolik.dailypulse.core.base.arch.Result
+import com.adamsmolik.dailypulse.core.network.di.NewsHttpClient
 import com.adamsmolik.dailypulse.core.network.extension.safeRequest
 import com.adamsmolik.dailypulse.data.source.model.SourcesDTO
+import io.ktor.http.HttpMethod
+import io.ktor.http.path
 
 class SourceApi(
     private val httpClient: NewsHttpClient,

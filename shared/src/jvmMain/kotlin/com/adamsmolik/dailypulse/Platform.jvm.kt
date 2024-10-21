@@ -12,5 +12,4 @@ actual class Platform {
 
     actual fun logSystemInfo() {
     }
-
 }

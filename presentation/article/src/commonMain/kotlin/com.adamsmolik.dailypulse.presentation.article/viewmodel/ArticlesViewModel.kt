@@ -1,8 +1,8 @@
 package com.adamsmolik.dailypulse.presentation.article.viewmodel
 
 import com.adamsmolik.dailypulse.core.ui.arch.BaseViewModel
-import com.adamsmolik.dailypulse.domain.article.usecase.ListArticlesUseCaseInput
 import com.adamsmolik.dailypulse.domain.article.usecase.ListArticlesUseCase
+import com.adamsmolik.dailypulse.domain.article.usecase.ListArticlesUseCaseInput
 import com.adamsmolik.dailypulse.presentation.article.model.ArticlesUiModel
 import com.adamsmolik.dailypulse.presentation.article.model.toUiModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -38,7 +38,9 @@ class ArticlesViewModel(
 
             useCase.execute(input)
                 .onData {
-                    _articlesState.emit(ArticlesUiModel(articles = it.map { item -> item.toUiModel() }))
+                    _articlesState.emit(
+                        ArticlesUiModel(articles = it.map { item -> item.toUiModel() })
+                    )
                 }
                 .onError {
                     _articlesState.emit(ArticlesUiModel(error = it.toString()))
